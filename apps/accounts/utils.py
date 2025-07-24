@@ -5,13 +5,13 @@ from random import choices, shuffle
 
 def send_sms(phone_number: str, code: str) -> None:
     'simulates sending code via SMS'
-    sleep(3)
+    sleep(2)
     return None
 
 
-def create_code() -> str:
+def create_sms_code() -> str:
     'creates a code for SMS'
-    return ''.join(choices(digits, k=6))
+    return ''.join(choices(digits, k=4))
 
 
 def generate_invite_code() -> str:

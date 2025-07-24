@@ -24,3 +24,6 @@
 # Docker
 .docker.env
 .dockerignore
+
+# Files
+.goals
