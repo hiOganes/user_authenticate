@@ -38,11 +38,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    # Custom Apps
+    # Created Apps
     'apps.accounts.apps.AccountsConfig',
     # Third party Apps
     'drf_spectacular',
     'rest_framework',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -143,7 +144,6 @@ SPECTACULAR_SETTINGS = {
     'DESCRIPTION': 'Your project description',
     'VERSION': '1.0.0',
     'SERVE_INCLUDE_SCHEMA': False,
-    # OTHER SETTINGS
 }
 
 AUTH_USER_MODEL = "accounts.User"
