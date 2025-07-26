@@ -46,7 +46,7 @@
 
 1. Clone the repository
     ```
-    link
+    https://github.com/hiOganes/user_authenticate.git
     ```
 
 2. Create and activate a virtual environment
