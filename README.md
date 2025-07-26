@@ -35,7 +35,6 @@
 - [Installation](#installation)
 - [Configuration](#configuration)
 - [Running the Project](#running-the-project)
-- [Testing](#testing)
 
 ## Technologies
 
