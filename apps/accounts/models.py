@@ -26,9 +26,15 @@ class User(AbstractUser):
         blank=True,
         null=True
     )
+    invite_status_code = models.BooleanField(
+        default=False,
+        blank=True,
+        verbose_name='Статус активации кода'
+    )
     invite_users = models.ManyToManyField(
         'self',
-        related_name='invite_users'
+        related_name='invite_by',
+        symmetrical=False
     )
     created_at = models.DateTimeField(
         auto_now_add=True,
@@ -38,6 +44,7 @@ class User(AbstractUser):
         auto_now=True,
         verbose_name='Дата обновления'
     )
+    username = None
 
     USERNAME_FIELD = 'phone_number'
 

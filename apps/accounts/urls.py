@@ -1,27 +1,32 @@
 from django.urls import path
-from rest_framework_simplejwt.views import (
-    TokenObtainPairView,
-    TokenRefreshView,
-)
 
-from apps.accounts.views import api_views, app_views
-
+from apps.accounts import views
 
 urlpatterns = [
     path(
         'api/token/',
-        api_views.AuthenticateSmsCodeAPIView.as_view(),
+        views.AuthenticateSmsCodeAPIView.as_view(),
         name='token_obtain_pair'
     ),
     path(
         'api/token/refresh/',
-        TokenRefreshView.as_view(),
+        views.CustomTokenRefreshView.as_view(),
         name='token_refresh'
     ),
     path(
         'api/sms-code/',
-        api_views.GetSmsCodeAPIView.as_view(),
+        views.GetSmsCodeAPIView.as_view(),
         name='get-sms-code'
     ),
-    path('api/list-users/', api_views.ListUsers.as_view(), name='list-users')
+    path('api/list-users/', views.ListUsers.as_view(), name='list-users'),
+    path(
+        'api/invite-code/',
+        views.ActivateInviteCode.as_view(),
+        name='invite-code'
+    ),
+    path(
+        'api/check/invite-code/',
+        views.CheckInviteCodeAPIView.as_view(),
+        name='check-invite-code'
+    )
 ]
